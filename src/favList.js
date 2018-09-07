@@ -31,10 +31,10 @@ class FavList extends Component {
         //console.log(this.props.data)
         //console.log(this.state.newList)
         let listaFav = typeof this.state.newList !== "undefined" ? this.state.newList.map((el, i) => {
-
+            let style = { height: "65px" }
             return (
                 <Card key={i}>
-                    <CardContent>
+                    <CardContent style={style}>
                         <Typography gutterBottom variant="headline" component="h4">
                             {el.title}
                         </Typography>
@@ -51,12 +51,12 @@ class FavList extends Component {
             )
 
         }) : null
-
+        let fSize = { fontSize: "2em" }
         return (
             <div className="favList">
                 <AppBar position="static" color="default">
                     <Toolbar>
-                        <Typography className="articleHead" variant="title" color="inherit">
+                        <Typography style={fSize} className="articleHead" variant="title" color="inherit">
                             Articles to read
           </Typography>
                     </Toolbar>
