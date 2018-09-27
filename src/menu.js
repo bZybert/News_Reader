@@ -115,9 +115,9 @@ class Menu extends Component {
 
     }
     delButt = (result) => {
-        console.log(result)
+        //console.log(result)
         let toDel = this.state.sum.filter((e) => {
-            console.log(e)
+            //console.log(e)
             return e !== result
         })
 

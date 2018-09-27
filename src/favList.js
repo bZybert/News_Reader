@@ -32,10 +32,13 @@ class FavList extends Component {
         //console.log(this.state.newList)
         let listaFav = typeof this.state.newList !== "undefined" ? this.state.newList.map((el, i) => {
             let style = { height: "65px" }
+            let oHidden = {
+                overflow: "hidden"
+            }
             return (
                 <Card key={i}>
                     <CardContent style={style}>
-                        <Typography gutterBottom variant="headline" component="h4">
+                        <Typography gutterBottom variant="headline" component="h4" style={oHidden}>
                             {el.title}
                         </Typography>
                     </CardContent>
@@ -51,17 +54,26 @@ class FavList extends Component {
             )
 
         }) : null
-        let fSize = { fontSize: "2em" }
+        let fSize = {
+            fontSize: "2em",
+            color: "white",
+        }
+        let bColor = {
+            backgroundColor: "black"
+        }
+        let oScroll = {
+            overflow: "scroll"
+        }
         return (
             <div className="favList">
-                <AppBar position="static" color="default">
+                <AppBar style={bColor} position="static" color="default">
                     <Toolbar>
                         <Typography style={fSize} className="articleHead" variant="title" color="inherit">
                             Articles to read
           </Typography>
                     </Toolbar>
                 </AppBar>
-                <ul>
+                <ul style={oScroll}>
                     {listaFav}
                 </ul>
             </div>
